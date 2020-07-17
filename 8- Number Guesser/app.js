@@ -34,11 +34,11 @@ guessBtn.addEventListener('click', function(){
 
     // Validate 
     if(isNaN(guess) || guess<min || guess>max){
-        setMessage(`Please enter a number between ${min} and ${max}`, 'red')
+        gameOver(false, `Please enter a number between ${min} and ${max}`)
     }
 
     // Check if won
-    if(guess === winningNum){
+    else if(guess === winningNum){
         // Game over - Won
 
         gameOver(true, `${winningNum} is correct! YOU WIN!`)
